@@ -1,0 +1,35 @@
+html{
+    height: 100%;
+  }
+body{
+    background-color: #fcf1eb;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.footer{
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+.bi {
+    vertical-align: -.125em;
+    color: #9E8580;
+  }
+.navhover:hover{
+    background-color: #b29892;
+    border-radius: 5px;
+  }
+.sc {
+    overflow-y: scroll;
+  }
+.sc::-webkit-scrollbar {
+      width: 6px;
+    }
+.sc::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: #ECE1DB;
+      border: 1px solid #9E8580;
+    }
+.sc::-webkit-scrollbar-track {
+      box-shadow: transparent;
+    }

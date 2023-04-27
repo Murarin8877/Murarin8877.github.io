@@ -1,0 +1,94 @@
+html{
+    height: 100%;
+  }
+  body{
+    background-color: #fcf1eb;
+    display: grid;
+    grid-template-rows: 1fr auto;;
+  }
+  .footer{
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .sc {
+    overflow-y: scroll;
+  }
+  .sc::-webkit-scrollbar {
+      width: 6px;
+    }
+  
+  .sc::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: #ECE1DB;
+      border: 1px solid #9E8580;
+    }
+  .sc::-webkit-scrollbar-track {
+      box-shadow: transparent;
+    }
+  .bi {
+    vertical-align: -.125em;
+    color: #9E8580;
+  }
+  .navhover:hover{
+    background-color: #b29892;
+    border-radius: 5px;
+  }
+  .lobtn{
+    border-radius: 50px; 
+    height: 50px; 
+    width: 250px; 
+    border: none; 
+    background-color: #9E8580; 
+    color: #fcf1eb;
+    box-shadow: 0px 10px 6px #D1C0BA;
+    font-weight: bold;
+  }
+  .lobtn:hover{
+    background-color: #816a65;
+  }
+  .intxt{
+    border-radius: 50px;
+    height: 50px; width: 250px;
+    border: none;
+    background-color: #ECE1DB;
+    padding-left: 10px;
+    box-shadow: 0px 5px 6px #C8B7B2 inset;
+  }
+  .intxt:focus{
+    outline: none;
+    border-style: solid;
+    border-color: #9E8580;
+  }
+  .createbtn{
+    border-radius: 50px; 
+    height: 50px; 
+    width: 250px; 
+    border: none; 
+    background-color: #ECE1DB; 
+    color: #9E8580;
+    box-shadow: 0px 10px 6px #D1C0BA;
+    font-weight: bold;
+  }
+  .createbtn:hover{
+    background-color: #f1e8e5;
+  }
+  #modalcreate{
+    background-color: #9E8580;
+    color: #FCF1EB;
+    border-color: #9E8580;
+    font-weight: bold;
+  }
+  #modalcreate:hover{
+    background-color: #b29892;
+    border-color: #b29892;
+  }
+  .inputtxt{
+    border-radius: 10px;
+    background-color: #ECE1DB;
+    border: none;
+  }
+  .inputtxt:focus{
+    outline: none;
+    border-style: solid;
+    border-color: #9E8580;
+  }

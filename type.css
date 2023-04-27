@@ -1,0 +1,70 @@
+
+html{
+  height: 100%;
+}
+
+body{
+  background-color: #fcf1eb;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.footer{
+  grid-row-start: 2;
+  grid-row-end: 3;
+  
+}
+
+.sc {
+  overflow-y: scroll;
+}
+
+.sc::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sc::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #ECE1DB;
+    border: 1px solid #9E8580;
+}
+
+.sc::-webkit-scrollbar-track {
+    box-shadow: transparent;
+}
+.bi {
+  vertical-align: -.125em;
+  color: #9E8580;
+}
+.navhover:hover{
+  background-color: #b29892;
+  border-radius: 5px;
+}
+.typebtn{
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  width: 350px;
+  height: 70px;
+  border-width: 2px;
+  border-style: solid;
+  margin-bottom: 20px;
+}
+.type2btn{
+  width: 300px;
+  height: 60px;
+  border-style: solid;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  border-color: #9E8580;
+  background-color: #ECE1DB;
+  color: #9E8580;
+}
+.card.card-body{
+  width: 70%;
+}
+#allcontent{
+  padding-left: 100px;
+  padding-right: 100px;
+}
