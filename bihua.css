@@ -7,7 +7,6 @@ body{
   background-color: #fcf1eb;
   display: grid;
   grid-template-rows: 1fr auto;;
-  height: 100%;
 }
 .footer{
   grid-row-start: 2;
@@ -130,6 +129,12 @@ body{
 }
 .form-label{
   font-weight: bold;
+}
+#alltxt::-webkit-scrollbar{
+  display: none;
+}
+#strokeorder::-webkit-scrollbar{
+  display: none;
 }
 
 #docs-target-HintAllstroke{
