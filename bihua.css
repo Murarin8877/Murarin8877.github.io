@@ -137,7 +137,7 @@ body{
 
 /* AllHanzi-container 的svg背景 */
 .HanziSvg{
-  background-image: url('img/hanzibg.svg');
+  background-image: url('./img/hanzibg.svg');
   background-color: #fff;
 }
 svg #HanziSvg_0{
@@ -145,7 +145,7 @@ svg #HanziSvg_0{
 }
 /* 漢字筆順順序區塊 的svg背景 */
 .docshanzi_Svg{
-  background-image: url('img/hanzibg.svg');
+  background-image: url('./img/hanzibg.svg');
   background-color: #fff;
 }
 
