@@ -50,21 +50,61 @@ body{
   border-style: solid;
   margin-bottom: 20px;
 }
-.type2btn{
-  width: 300px;
-  height: 60px;
-  border-style: solid;
-  border-radius: 10px;
-  font-size: 22px;
-  font-weight: bold;
-  border-color: #9E8580;
-  background-color: #ECE1DB;
-  color: #9E8580;
-}
 .card.card-body{
-  width: 70%;
+  width: 55%;
+  border: none;
+  margin-left: 100px;
 }
 #allcontent{
   padding-left: 100px;
   padding-right: 100px;
+}
+.dropdown{
+  text-align: center;
+}
+#ddl1{
+  background-color: #D3D6C5;
+  color: #868E76;
+  font-weight: bold;
+  border-width: 2px;
+  border-color: #868E76;
+}
+#ddl2{
+  background-color: #9FBBC9;
+  color: #59666F;
+  font-weight: bold;
+  border-width: 2px;
+  border-color: #59666F;
+}
+#ddl3{
+  background-color: #D7C6E6;
+  color: #9E88AF;
+  font-weight: bold;
+  border-width: 2px;
+  border-color: #9E88AF;
+}
+#ddl4{
+  background-color: #F1D9B5;
+  color: #CF8E56;
+  font-weight: bold;
+  border-width: 2px;
+  border-color: #CF8E56;
+}
+#ddl5{
+  background-color: #F3B7B7;
+  color: #A6513D;
+  font-weight: bold;
+  border-width: 2px;
+  border-color: #A6513D;
+}
+.dropdown-item{
+  font-size: 18px;
+  font-weight:600;
+}
+.dropdown-item:active{
+  background-color: #9E8580;
+  color: #000;
+}
+.dropdown-item:hover{
+  background-color: #ECE1DB;
 }
