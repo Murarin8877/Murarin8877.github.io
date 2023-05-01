@@ -373,9 +373,9 @@ function getData()
 
           text2 = "<table> <tr>";
 
-          text2 += "<th bgcolor='#adb5bd' colspan='2'>" +"部首"+"</th>";
-          text2 += "<th bgcolor='#adb5bd' colspan='2'>" +"注音"+"</th>";
-          text2 += "<th bgcolor='#adb5bd' colspan='2'>" +"總筆畫"+"</th>";
+          text2 += "<th bgcolor='transparent' colspan='2'>" +"部首"+"</th>";
+          text2 += "<th bgcolor='transparent' colspan='2'>" +"注音"+"</th>";
+          text2 += "<th bgcolor='transparent' colspan='2'>" +"總筆畫"+"</th>";
 
           text2 += "</tr><tr>";
           text2 += "<th colspan='2'>" + w_data[1] + "</th>";

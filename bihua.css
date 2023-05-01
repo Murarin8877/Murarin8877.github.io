@@ -6,7 +6,7 @@ html{
 body{
   background-color: #fcf1eb;
   display: grid;
-  grid-template-rows: 1fr auto;;
+  grid-template-rows: 1fr auto;
 }
 .footer{
   grid-row-start: 2;
@@ -44,7 +44,7 @@ body{
 }
 .nav.nav-tabs .nav-item .nav-link{
   font-weight: bold;
-  font-size: medium;
+  font-size: 18px;
   background-color:#9FBBC9;
   color: #FCF1EB;
   border: none;

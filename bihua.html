@@ -89,7 +89,7 @@
                 </g>
               </svg>
             </div>
-            <div class="col" id="practice" style="background-color: #ECE1DB; border-style: solid; border-color:#ECE1DB; border-radius: 10px; padding: 5px;height: 90vh; "> <!--整個遊戲區塊 要修改高度從這-->
+            <div class="col" id="practice" style="background-color: #ECE1DB; border-style: solid; border-color:#ECE1DB; border-radius: 10px; padding: 5px;height: 92vh; "> <!--整個遊戲區塊 要修改高度從這-->
               <div class="row"> <!--遊戲區塊標籤頁-->
                 <div class="row" style="width: 13%; margin-right: 2%;"></div>
                 <div class="col" style="padding: 0%;margin-bottom: 1px;">
@@ -165,43 +165,43 @@
                       </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" id="savechange">Save changes</button>
+                      remind
                     </div>
                   </div>
                 </div>
               </div>
 
               <!--檢視課文所有字區塊-->
-              <div  class="row left" style="float: left; background-color: transparent; border-style: solid; border-color:#9E8580; border-radius: 10px; width: 13%; height:95.5%; margin-right: 1%;">  
-                <div class="overflow-auto" style="height:100%; width: 100%;">
+              <div  class="row left" style="float: left; background-color: transparent; border-style: solid; border-color:#9E8580; border-radius: 10px; width: 13%; height:96%; margin-right: 10px; padding-top: 5px;">  
+                <div class="overflow-auto" id="alltxt" style="height:100%; width: 100%;">
                   <div id="AllHanzi-container"></div>
                 </div>
               </div>
               <!--放置筆順遊戲區塊-->
               <div  class="row" style="height: 85%;">
                 <!--  漢字練習區塊 -->
-                <div id="StrokeBlock" class="col-10" style="float: unset; background-color: #fff; border-style: solid; border-color:#9E8580; border-radius: 10px; margin-left: 1%; margin-bottom: 1%; margin-right: 2%; ">
+                <div id="StrokeBlock" class="col-10" style="float: unset; background-color: #fff; border-style: solid; border-color:#9E8580; border-radius: 10px;margin-bottom: 5px; margin-right: 10px; ">
                   <div id="target" style="background-image: url('img/hanzibg.svg'); "></div>
                 </div>
-                <div class="col" style="float: right; background-color: transparent; border-style: solid; border-color:#9E8580; border-radius: 10px; width: 13%; height:100%; margin-bottom: 1%; margin-right: 0px;">
+                <div class="col" style="float: right; background-color: transparent; border-style: solid; border-color:#9E8580; border-radius: 10px; width: 13%; height:99.1%; margin-right: 0px; padding-top: 5px;">
                   <!--  漢字筆順順序區塊 -->
-                  <div class="overflow-auto" style="height: 100%;">
+                  <div class="overflow-auto" id="strokeorder" style="height: 100%">
                     <div id="docs-target-HintAllstroke"></div>
                   </div>
                 </div>
               </div>
               <!--放置部首筆畫與語音按鈕區塊-->
-              <div class="row py-3" style="height: 10.5%; width:86%;">
+              <div class="row py-1" style="height: 10.5%; width:86%;">
                 <!--部首筆畫-->
-                <div class="col-7" style="background-color: transparent; border-style: solid; border-color:#9E8580; border-radius: 10px; margin-right: 1%;">
+                <div class="col-7" style="background-color: transparent; border-style: solid; border-color:#9E8580; border-radius: 10px; margin-right: 10px;">
                   <table id="char-dictionary" class="" style="height: 100%; width: 100%;"></table> 
                 </div>
                 <!--語音按鈕-->  
-                <div class="col" style="margin-right: 1%; padding: 0%;">
+                <div class="col" style="margin-right: 10px; padding: 0%;">
                   <button  id="speak" class="speak" type="button" style="background-color: #D3D6C5; border-style: solid; border-color:#868E76; border-radius: 10px; width: 100%; height: 100%;"><img src="./img/sound.png"></button>                 <!--語音-->
                 </div>
                 <!-- 放置上一個按鈕 -->
-                <div id="PreviousHanzi" class="col" style="margin-right: 1%; padding: 0%; " onclick="Previoushanzi(this);">
+                <div id="PreviousHanzi" class="col" style="margin-right: 10px; padding: 0%; " onclick="Previoushanzi(this);">
                   <button type="button" style="background-color: #9FBBC9;  border-style: solid; border-color:#59666F; border-radius: 10px; width: 100%; height: 100%;"><img src="./img/back.png"></button> <!--left button-->
                 </div>
                 <!-- 放置下一個按鈕 -->
