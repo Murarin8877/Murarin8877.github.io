@@ -111,11 +111,26 @@ body{
   margin-left:0;
 }
 #allcontent{
-  padding-left: 100px;
+  padding-right: 10px;
   padding-right: 100px;
 }
 .modal-body .row{
   margin-bottom: 20px;
+}
+.tbody, td, tfoot, th{  /*部首筆畫大小*/
+  font-size: 20.5px;
+}
+#menu{
+  margin-right: 20px;
+  padding: 0%;
+}
+#practice{    
+  background-color: #ECE1DB;
+  border-style: solid;
+  border-color:#ECE1DB;
+  border-radius: 10px;
+  padding: 5px;
+  height: 94vh;           /*game區塊高度*/
 }
 #savechange{
   background-color: #9E8580;
@@ -138,23 +153,31 @@ body{
 }
 
 #docs-target-HintAllstroke{
-  text-align: center;
+  text-align: center; /* 容器裡面置中 */
+}
+
+#AllHanzi-container{
+  text-align: center;/* 容器裡面置中 */
 }
 
 /* AllHanzi-container 的svg背景 */
 .HanziSvg{
-  background-image: url('./img/hanzibg.svg');
+  background-image: url('../img/hanzibg.svg');
   background-color: #fff;
+  
 }
 svg #HanziSvg_0{
   border: '1px solid red';
 }
 /* 漢字筆順順序區塊 的svg背景 */
 .docshanzi_Svg{
-  background-image: url('./img/hanzibg.svg');
+  background-image: url('../img/hanzibg.svg');
   background-color: #fff;
 }
-
+#target{
+  background-image: url('../img/hanzibg.svg');
+  background-position: center;
+}
 #loader {
   position: absolute;
   left: 50%;
@@ -164,6 +187,18 @@ svg #HanziSvg_0{
   height: 150px;
   margin: -75px 0 0 -75px;  
 }
+#canvas{
+  width:"800px"; 
+  height:"500px";
+  background-image: url('../img/hanzibg.svg');
+  background-position: center;
+  
+}
+
+/* #divcanvas{
+
+} */
+
 
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }

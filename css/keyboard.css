@@ -1,0 +1,310 @@
+html{
+  height: 100%;
+}
+body{
+  background-color: #fcf1eb;
+  display: grid;
+  grid-template-rows: 1fr auto;;
+}
+.footer{
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin: 0;
+}
+.sc {
+  overflow-y: scroll;
+}
+.sc::-webkit-scrollbar {
+    width: 6px;
+  }
+
+.sc::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #ECE1DB;
+    border: 1px solid #9E8580;
+  }
+.sc::-webkit-scrollbar-track {
+    box-shadow: transparent;
+  }
+.bi {
+  vertical-align: -.125em;
+  color: #9E8580;
+}
+.navhover:hover{
+  background-color: #b29892;
+  border-radius: 5px;
+}
+#menu{
+  margin-right: 20px;
+  padding: 0%;
+}
+#practice{    
+  background-color: #ECE1DB;
+  border-style: solid;
+  border-color:#ECE1DB;
+  border-radius: 10px;
+  padding: 5px;
+  height: 100vh;           /*game區塊高度*/
+}
+#all{
+  padding-left: 12px;
+  padding-right: 100px;
+}
+#upper{
+  height: 40%;
+
+}
+#scorerow{
+  margin-bottom: 7px;
+}
+#soundrow{
+  text-align: center;
+  margin-bottom: 7px;
+}
+#ansrow{
+  text-align: center;
+  margin-bottom: 7px;
+}
+#sound{
+  background-color: #D3D6C5;
+  border-style: solid;
+  border-color:#868E76;
+  border-radius: 10px;
+  height: 80px;
+  width: 80px;
+}
+#ans{
+  background-color: #D3D6C5;
+  border-style: solid;
+  border-color:#868E76;
+  border-radius: 10px;
+  height: 80px;
+  width: 80px;
+}
+.txt{
+  font-weight: bold;
+  color: #68492A;
+  font-size:larger;
+  text-align: center;
+}
+#pic{
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color:#9E8580;
+  height: 370px;
+  width: 370px;
+
+}
+.score{
+  border-width: 2px;
+  border-style: solid;
+  border-color:#9E8580;
+  border-radius: 10px;
+  height: 80px;
+  width: 80px;
+  background-color: #fff;
+  border-width: 2px;
+}
+.pic2{
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color:#9E8580;
+  height: 250px;
+  width: 370px;
+  margin-bottom: 10px;
+}
+#textContainer{
+  outline: none;
+  width: 370px;
+  height: 50px;
+  border: #9E8580;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  margin-bottom: 10px;
+}
+#inputxt:focus{
+  border-width: 3px;
+}
+.back{
+  width: 96px;
+  height: 50px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #59666F;
+  background-color: #9FBBC9;
+  padding: 0px;
+  text-align: center;
+
+}
+.finish{
+  width: 96px;
+  height: 50px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #A6513D;
+  background-color: #F3B7B7;
+  padding: 0px;
+  text-align: center;
+}
+.next{
+  width: 96px;
+  height: 50px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #59666F;
+  background-color: #9FBBC9;
+  padding: 0px;
+  text-align: center;
+}
+#right3btn{
+  width:419px;
+  text-align: center;
+}
+.keys1 {        /* 聲符 */
+  width: 60px;
+  height: 60px;
+  background-color: #9FBBC9;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  transition: .2s;
+  z-index: 5;
+  border:none;
+  cursor: pointer;
+  font-size: 25px;
+  user-select: none;
+  border-radius: 5px;
+  box-shadow: 0px 6px 8px#a8a8a8;
+  font-weight: bold;
+}
+.keys2 {        /* 韻符 */
+  width: 60px;
+  height: 60px;
+  background-color: #9E88AF;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  transition: .2s;
+  z-index: 5;
+  border:none;
+  cursor: pointer;
+  font-size: 25px;
+  user-select: none;
+  border-radius: 5px;
+  box-shadow: 0px 6px 8px #a8a8a8;
+  font-weight: bold;
+}
+.keys3 {         /* 聲調、空白 */
+  width: 60px;
+  height: 60px;
+  background-color: #CF8E56;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  transition: .2s;
+  z-index: 5;
+  border:none;
+  cursor: pointer;
+  font-size: 25px;
+  user-select: none;
+  border-radius: 5px;
+  box-shadow: 0px 6px 8px#a8a8a8;
+  font-weight: bold;
+}
+.keys1:hover {
+  background-color:#fff ;
+  color: #59666F; 
+}
+.keys2:hover {
+  background-color:#fff ;
+  color: #9E88AF; 
+}
+.keys3:hover {
+  background-color:#fff ;
+  color: #CF8E56; 
+}
+.keys3.backspace_key:hover {
+  background-color: #A6513D;
+}
+.keyboard_wrapp {
+  max-width: 1008px;
+  width: 100%;
+  background-color: #d3d3d3;
+  position: relative;
+  order: 2;
+}
+.backspace_key {
+    width: 120px;
+}
+
+.tab_key {
+    width: 90px;
+}
+
+.slash_key {
+    width: 90px;
+}
+
+.caps_lock_key {
+    width: 120px;
+}
+
+.enter_key {
+    width: 128px;
+}
+
+.shift_key {
+    width: 104px;
+}
+.shift_left{
+    width: 144px;
+}
+
+.space_key {
+    max-width: 600px;
+    width: 596px;
+}
+.keys.active {
+  background-color:#fff ;
+  color: #555555; 
+}
+
+.keys.remove {
+  animation: keys_animation 0.5s forwards ;
+}
+
+.keyboard_lights {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#keysrow{
+  display: flex;
+  flex-wrap: nowrap;
+  
+}
+#bottom{
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-left: 68px;
+  display: block;
+
+}
+.keyboard_keys{
+  text-align: center;
+}

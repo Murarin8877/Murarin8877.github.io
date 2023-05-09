@@ -27,7 +27,7 @@ window.onload = function () {
             document.getElementById("myDiv").style.display = "block";//內容區塊 開啟
             updateCharacter();//避免筆順練習區塊 抓不到value
         });
-     }, 800);
+     }, 1);
     CourseAllHanzi()//取得此課程的所有漢字
     updateCharacter();//更新 如有變動工具列數值等等
     getData();//漢字 部首 注音
@@ -43,6 +43,12 @@ window.onload = function () {
       writer.animateCharacter();
       /* HiddenCanvas(); */
     });
+
+    //按下進階練習
+    document.querySelector('.js-hardquiz').addEventListener('click', function (){
+      CanvasHanziBg(AllHanzi[Hanzi_index]);
+    });
+    
     //按下測驗按鈕
     document.querySelector('#generally').addEventListener('click', function () {
     /* VarshowHintAfterMisses = document.querySelector('[name="HintAfterMisses"]').value; //錯誤提示
@@ -76,12 +82,12 @@ window.onload = function () {
   });
   screenWidth = window.innerWidth; //螢幕寬度
   screenHeight = window.innerHeight; //螢幕高度
-  svgWidth = screenHeight * 0.15; //設置課程的所有漢字SVG高度為螢幕寬度的16%
-  svgHeight = screenHeight * 0.15;//設置課程的所有漢字SVG高度為螢幕高度的16%
+  svgWidth = screenHeight * 0.12; //設置課程的所有漢字SVG高度為螢幕寬度的16%
+  svgHeight = screenHeight * 0.12;//設置課程的所有漢字SVG高度為螢幕高度的16%
 };
 
 
-//漢字筆順順序區塊
+//漢字筆順順序區塊(某個漢字的全筆順)
 function renderFanningStrokes(target, strokes) {
   var docs_target_div = document.getElementById("docs-target-HintAllstroke");
   var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -116,6 +122,52 @@ function AllHintStroke(){
       var strokesPortion = charData.strokes.slice(0, i + 1);
       renderFanningStrokes(target, strokesPortion);
     }
+  });
+}
+
+//進階測驗的漢字形狀畫布背景 非常重要
+function CanvasHanziBg(char){
+  HanziWriter.loadCharacterData(char).then(function(charData) {
+    // create a new canvas element
+    var canvas = document.getElementById('canvas');
+    console.log(canvas.width+","+canvas.height);
+    // get the 2d context of the canvas
+    var ctx = canvas.getContext('2d');
+  
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.style.width = canvas.width;
+    svg.style.height = canvas.height;
+    var group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  
+    // set the transform property on the g element so the character renders at 150x150
+    var transformData = HanziWriter.getScalingTransform(canvas.width, canvas.height);
+    group.setAttributeNS(null, 'transform', transformData.transform);
+    svg.appendChild(group);
+  
+    charData.strokes.forEach(function(strokePath) {
+      var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttributeNS(null, 'd', strokePath);
+      // style the character paths
+      path.style.fill = '#e4e4e4';//path中間填滿
+      /* path.style.stroke = '#555'; *///path 邊框
+      
+      group.appendChild(path);
+    });
+  
+    // draw the SVG onto the canvas
+    var svgData = new XMLSerializer().serializeToString(svg);
+    var img = new Image();
+    img.src = 'data:image/svg+xml;base64,' + btoa(svgData);
+    img.onload = function() {
+      // set the canvas as the background of the target canvas element
+      var target = document.getElementById('canvas');
+      target.style.backgroundImage = 'url(' + canvas.toDataURL() + ')';
+      ctx.fillStyle = "#fff"; /* canvas背景顏色 */
+      ctx.fillRect(0, 0, canvas.width,canvas.height ); /* 大小 */
+      ctx.drawImage(img, 0, 0);
+      cPush(); //將此紀錄以圖片的方式 儲存置array中
+    };
+    
   });
 }
 
@@ -195,6 +247,7 @@ async function CourseAllHanzi()
     }
   } */
 
+  //更新漢字設定等等
   function updateCharacter() {
     /* 取得筆順區塊大小 */
     const divElement = document.getElementById('StrokeBlock');
@@ -225,7 +278,7 @@ async function CourseAllHanzi()
     window.writer = writer;
   }
 
-//更新所設定之值
+//更新所設定之值 (播放速度等)
 function SettingUpdateValue(){
   VarAnimationspeed = document.querySelector('[name="Animationspeed"]').value;
   VarshowHintAfterMisses = document.querySelector('[name = HintAfterMisses]').value;
@@ -289,6 +342,7 @@ function Nexthanzi()//按下 下一個 的按鈕 =>
   /* HiddenAllHintstroke();
   HiddenCanvas(); */
 }
+
 const msg = new SpeechSynthesisUtterance(); //come from WEB Speech API
 let voices = [];
 let options = [];
@@ -389,4 +443,130 @@ function getData()
   };
   xhr.send();
 }
+
+
+
+
+var mousePressed = false;
+var lastX, lastY;
+var ctx;
+
+function InitThis() {
+  ctx = document.getElementById('canvas').getContext("2d");
+  $('#canvas').mousedown(function (e) {
+      mousePressed = true;
+      Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
+  });
+
+  $('#canvas').mousemove(function (e) {
+      if (mousePressed) {
+          Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
+      }
+  });
+
+  $('#canvas').mouseup(function (e) {
+      if (mousePressed) {
+          mousePressed = false;
+          cPush();
+      }
+  });
+
+  $('#canvas').mouseleave(function (e) {
+      if (mousePressed) {
+          mousePressed = false;
+          cPush();
+      }
+  });
+  drawImage();
+}
+
+
+function drawImage() {
+  CanvasHanziBg(AllHanzi[Hanzi_index]);
+  /* var canvasBg = document.getElementById('canvas');
+  var dataURL = canvasBg.toDataURL();
+  var img = new Image();
+  img.src = dataURL;
+  img.onload = function() {
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  }; */
+}
+
+
+
+/* function drawImage() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'img/myimg.jpg', true);
+  xhr.responseType = 'blob';
+  xhr.onload = function() {
+    if (this.status === 200) {
+      var blob = this.response;
+      var img = new Image();
+      img.onload = function() {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        cPush();
+      };
+      img.src = URL.createObjectURL(blob);
+    }
+  };
+  xhr.send();
+} */
+
+function Draw(x, y, isDown) {
+    if (isDown) {
+        ctx.beginPath();
+        ctx.strokeStyle = $('#selColor').val();
+        ctx.lineWidth = $('#selWidth').val();
+        ctx.lineJoin = "round";
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.closePath();
+        ctx.stroke();
+    }
+    lastX = x; 
+    lastY = y;
+}
+	
+/* function clearArea() {
+  canvas.width = canvas.width;
+  canvas.height = canvas.height;
+
+} */
+
+var cPushArray = new Array();
+var cStep = -1;
+// ctx = document.getElementById('myCanvas').getContext("2d");
+     
+function cPush() {
+/*   console.log("11");
+ */    cStep++;
+    if (cStep < cPushArray.length) { cPushArray.length = cStep; }
+    cPushArray.push(document.getElementById('canvas').toDataURL());
+/*     document.title = cStep + ":" + cPushArray.length;
+ */
+}
+//上一步        
+function cUndo() {
+/*   console.log("22");
+ */  if (cStep > 0) {
+      cStep--;
+      var canvasPic = new Image();
+      canvasPic.src = cPushArray[cStep];
+      canvasPic.onload = function () { ctx.drawImage(canvasPic, 0, 0); }
+/*       document.title = cStep + ":" + cPushArray.length;
+ */
+  }
+}     
+//往後一步
+function cRedo() {
+/*   console.log("33");
+ */  if (cStep < cPushArray.length-1) {
+      cStep++;
+      var canvasPic = new Image();
+      canvasPic.src = cPushArray[cStep];
+      canvasPic.onload = function () { ctx.drawImage(canvasPic, 0, 0); }
+/*       document.title = cStep + ":" + cPushArray.length;
+ */
+    }
+}                
 
